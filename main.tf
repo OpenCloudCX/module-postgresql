@@ -24,7 +24,7 @@ resource "aws_secretsmanager_secret_version" "postgres_root" {
 resource "kubernetes_secret" "postgres_root" {
   metadata {
     name      = "postgres-root-password"
-    namespace = "develop"
+    namespace = var.namespace
     labels = {
       "ConnectOutput" = "true"
     }
