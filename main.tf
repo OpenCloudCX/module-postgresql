@@ -6,7 +6,7 @@ terraform {
 }
 
 resource "aws_secretsmanager_secret" "postgres_root" {
-  name                    = "postgres_root"
+  name                    = "postgres_root-${var.stack}"
   recovery_window_in_days = 0
 }
 
